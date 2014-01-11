@@ -8,44 +8,47 @@ var meetUpApi = Backbone.View.extend({
   },
 
   render: function () {
+    var self = this;
     var context = {};
     context.data = this.model.get('results') || {data: []}; //data: []
     context.muTime = [];
 
     context.data.forEach(function (mut) {
     mutObj = {};
-    var week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    var timeStamp = new Date(mut.utc_time * 1000);
     mutObj.name = mut.group_name;
-    //context.day = context.timeFactor.get
-    mutObj.meetUpTime = week[timeStamp.getDay()] + " " + (timeStamp.getMonth() + 1) + '/' + timeStamp.getDate() + ' at ' + timeStamp.getUTCHours() + ":" + timeStamp.getMinutes();
+    mutObj.pic = mut.photo_url;
+    mutObj.url = mut.event_url;
+    mutObj.time = self.getMeetupTime(mut.utc_time);
+    if (mutObj.name == "PDXnode") {
+      mutObj.desc = ["The Meet Up for everything NodeJS. Newbies welcome. Meets on the third Thursday of every month."];
+    }
+
     context.muTime.push(mutObj);
   });
 
     console.log(context);
 
-    // results.forEach(function (stuff){
-    //   var contextData = {};
-    //   contextData.description = stuff.description;
-    //   contextData.name = "Name: " + stuff.name;
-    //   contextData.updated = stuff.updated;
-    //   context.info.push(contextData);
-    //});
-
-    // context.data.forEach(function (meetUp) {
-    //   var dataObj = {};
-    //   var week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    //   var timeStamp = new Date(meetUp.utc_time * 1000);
-    //   //var name = data.name;
-    //   // var sunrise = new Date(day.sunriseTime * 1000);
-    //   // var sunset = new Date(day.sunsetTime * 1000);
-    //   dataObj.time = week[timeStamp.getDay()] + '(' + (timeStamp.getMonth() + 1) + '/' + timeStamp.getDate() + ') - ' + timeStamp.getUTCHours() + ":" + timeStamp.getUTCMinutes();
-      
-    //   context.eventTime.push(dataObj);
-    // });
 
     this.$el.html(this.template(context));
     return this;
+  },
+
+  getMeetupTime: function (meetUpTime) {
+    var obj = "";
+
+    var week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    var timeStamp = new Date(+meetUpTime);
+    var hours = timeStamp.getHours();
+    var mins = ":0" + timeStamp.getMinutes();
+    var time;
+    if (hours > 12) {
+      time = hours - 12 + mins + " PM";
+    } else {
+      time = hours + mins + " AM";
+    }
+    console.log(time);
+    obj = week[timeStamp.getDay()] + " " + (timeStamp.getMonth() + 1) + '/' + timeStamp.getDate() + ' at ' + time;
+    return obj;
   }
 
 });
