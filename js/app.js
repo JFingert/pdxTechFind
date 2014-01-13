@@ -20,8 +20,9 @@ $(function () {
 	 		url = "https://api.meetup.com/2/events?&sign=true&group_id=" + groupIds + "&key=" + apiKey + "&page=20";
 
 		$.getJSON(url + "&callback=?", null, function(eventData) {
-		 	eventObj = eventData;
-		 	console.log(eventObj);
+		 	app.eventObj = eventData;
+		 	console.log(app.eventObj);
+		 	app.models.events.set(app.eventObj);
 		});
 	}
 
@@ -31,8 +32,9 @@ $(function () {
 	 		url = "https://api.meetup.com/2/groups?&sign=true&group_id=" + groupIds + "&key=" + apiKey + "&page=20";
 
 		$.getJSON(url + "&callback=?", null, function(groupData) {
-		 	groupObj = groupData;
-		 	console.log(groupObj);
+		 	app.groupObj = groupData;
+		 	console.log(app.groupObj);
+		 	app.models.groups.set(app.groupObj);
 		});
 	}
 
@@ -41,14 +43,14 @@ $(function () {
 	app.models.groups = new GroupModel();
 
 	//Set Model Data
-	app.models.events.set(app.eventObj);
-	app.models.groups.set(app.groupObj);
+	// app.models.events.set(app.eventObj);
+	// app.models.groups.set(app.groupObj);
 
 	//Instantiate Backbone Views
 	app.views.event = new EventView();
 	app.views.group = new GroupView();
 
-	//Meetup API request using JSONP
+	//Meetup API request using JSONP & Set Model Data
 	meetUpGroupRequest(app.groupIds);
 	meetUpEventRequest(app.groupIds);
 
