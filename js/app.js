@@ -24,7 +24,7 @@ $(function () {
 		 	console.log(app.eventObj);
 		 	app.models.events.set(app.eventObj);
 		});
-	}
+	};
 
 
 	meetUpGroupRequest = function (groupIds) {
@@ -36,19 +36,15 @@ $(function () {
 		 	console.log(app.groupObj);
 		 	app.models.groups.set(app.groupObj);
 		});
-	}
+	};
 
 	//Instantiate Backbone Models
 	app.models.events = new EventModel();
 	app.models.groups = new GroupModel();
 
-	//Set Model Data
-	// app.models.events.set(app.eventObj);
-	// app.models.groups.set(app.groupObj);
-
 	//Instantiate Backbone Views
-	app.views.event = new EventView();
-	app.views.group = new GroupView();
+	app.views.event = new EventView({model: app.models.events});
+	app.views.group = new GroupView({model: app.models.groups});
 
 	//Meetup API request using JSONP & Set Model Data
 	meetUpGroupRequest(app.groupIds);

@@ -1,0 +1,19 @@
+{
+  "name": "pdxTechFind",
+  "version": "0.0.1",
+  "description": "",
+  "main": "js/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "David Currie",
+  "license": "MIT",
+  "browserify": {
+    "transform": [
+      "browserify-handlebars"
+    ]
+  },
+  "dependencies": {
+    "browserify-handlebars": "0.0.2"
+  }
+}
