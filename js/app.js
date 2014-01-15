@@ -1,3 +1,5 @@
+//beefy js/app.js:bundle.js --live
+
 $(function () {
 
 	//Load Backbone app modules and npm dependencies
@@ -25,7 +27,6 @@ $(function () {
 		 	app.models.events.set(app.eventObj);
 		});
 	};
-
 
 	meetUpGroupRequest = function (groupIds) {
 		var apiKey = "936f3b161c2450506d7b23683319",
