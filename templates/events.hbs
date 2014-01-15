@@ -1,5 +1,9 @@
 <h1>Events</h1>
 {{#each this}}
   <p><a href="{{event_url}}">{{name}}</a></p>
+  
   {{{description}}}
+  
+  <p>{{venue.name}}<br>{{venue.address_1}}<br>
+  {{venue.city}}, {{venue.state}} {{venue.zip}}</p><br>
 {{/each}}
