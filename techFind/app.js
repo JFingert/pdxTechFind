@@ -9,7 +9,7 @@ app.views = {};
 app.models = {};
 app.collections = {};
 
-var url = "https://api.meetup.com/events.json/?&topic=javascript&time=,&country=us&state=or&city=portland&key=2e573f48477c78263ed418797a647c&callback=?";
+var url = "https://api.meetup.com/groups.json/?&group_name=Ember-PDX&time=,&country=us&state=or&city=portland&key=2e573f48477c78263ed418797a647c&callback=?";
 
 
 app.models.currentMeetUps = new MeetUpModel({events: {}});
