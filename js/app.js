@@ -14,7 +14,7 @@ $(function () {
 		views: {},
 		eventObj: {},
 		groupObj: {},
-		groupIds: [6693792,4808882,8407282]
+		groupIds: [8407282,10030512,4523292,7391716,6693792,6063792,4808882]
 	};
 	
 	meetUpEventRequest = function (groupIds) {
