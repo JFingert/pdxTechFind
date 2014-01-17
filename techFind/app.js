@@ -1,32 +1,56 @@
-$(function () { // wait for on-ready
+//beefy js/app.js:bundle.js --live
 
+$(function () {
 
-var jsView = require('./views/meetUp.js');
-var MeetUpModel = require('./models/meetUpModel.js');
+        //Load Backbone app modules and npm dependencies
+        var EventView = require('./views/event.js'),
+        GroupView = require('./views/group.js'),
+        EventModel = require('./models/event.js'),
+        GroupModel = require('./models/group.js');
 
-var app = {};
-app.views = {};
-app.models = {};
-app.collections = {};
+        //App objects
+        var app = {
+                models: {},
+                views: {},
+                eventObj: {},
+                groupObj: {},
+                groupIds: [8407282,10030512,4523292,7391716,6693792,6063792,4808882]
+        };
+        
+        meetUpEventRequest = function (groupIds) {
+                var apiKey = "936f3b161c2450506d7b23683319",
+                         url = "https://api.meetup.com/2/events?&sign=true&group_id=" + groupIds + "&key=" + apiKey + "&page=20";
 
-var url = "https://api.meetup.com/groups.json/?&group_name=Ember-PDX&time=,&country=us&state=or&city=portland&key=2e573f48477c78263ed418797a647c&callback=?";
+                $.getJSON(url + "&callback=?", null, function(eventData) {
+                         app.eventObj = eventData;
+                         console.log(app.eventObj);
+                         app.models.events.set(app.eventObj);
+                });
+        };
 
+        meetUpGroupRequest = function (groupIds) {
+                var apiKey = "936f3b161c2450506d7b23683319",
+                         url = "https://api.meetup.com/2/groups?&sign=true&group_id=" + groupIds + "&key=" + apiKey + "&page=20";
 
-app.models.currentMeetUps = new MeetUpModel({events: {}});
+                $.getJSON(url + "&callback=?", null, function(groupData) {
+                         app.groupObj = groupData;
+                         console.log(app.groupObj);
+                         app.models.groups.set(app.groupObj);
+                });
+        };
 
-app.views.js = new jsView({model: app.models.currentMeetUps});
+        //Instantiate Backbone Models
+        app.models.events = new EventModel();
+        app.models.groups = new GroupModel();
 
-window.app = app;
+        //Instantiate Backbone Views
+        app.views.event = new EventView({model: app.models.events});
+        app.views.group = new GroupView({model: app.models.groups});
 
-$.getJSON(url, null, function(data) {
-  app.models.currentMeetUps.set(data);
-  console.log(data);
-});
-});
+        //Meetup API request using JSONP & Set Model Data
+        meetUpGroupRequest(app.groupIds);
+        meetUpEventRequest(app.groupIds);
 
-
-
-
-//var APIKey = "2e573f48477c78263ed418797a647c"
-
-//var url = "http://api.meetup.com/topics.json/";
+        //Console access to app
+        window.app = app;
+});   
