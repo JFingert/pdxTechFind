@@ -1,0 +1,125 @@
+
+$(function () {
+
+	//Current nav
+	$('.navlink').mousedown(function(e){
+		$('.navlink.clickedNav').removeClass('clickedNav'); //iterates through all such elements automagically
+		$(this).addClass('clickedNav');
+		e.stopPropagation();
+	});
+
+
+	//Click on the group square
+	$('.group').mousedown(function(e) {
+		/* Act on the event */
+		document.location.href="detail.html";
+		e.stopPropagation();
+	});
+
+	//Click elsewhere
+	$(document).mousedown(function (e) {
+        if($('.detailbg').length > 0){ //checks if the page has the css class detailbg (i.e, if you're on the detail.html page) and if so, run the code
+        	document.location.href = "index.html";
+        	e.stopPropagation();
+        };
+    });
+    $('.detailwhite').mousedown(function (e) {
+        e.stopPropagation();
+    });
+
+    //Positioning of navbar
+    var y = 0;
+    function scrollFunction() {
+    	var y = window.pageYOffset;
+    	if(y > 280){ //checks if the vertical scroll is greater than 280px from top (the length of portland.png)
+    		$('.navbar').css({top : '0px', position : 'fixed'})
+    	} else {
+    		$('.navbar').css({top : '280px', position : 'absolute'});
+    		};
+    };
+    window.onscroll=scrollFunction;
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+ //    //calls resize events at end of resize only
+ //    var waitForFinalEvent = (function () {
+ //  		var timers = {};
+  		
+ //  		return function (callback, milliseconds, uniqueID) {
+ //    		if (!uniqueID) {
+ //      			uniqueID = "Don't call this twice without a uniqueID";
+ //    		}
+
+ //    		if (timers[uniqueID]) {
+ //      			clearTimeout (timers[uniqueID]);
+ //    		}
+ //    		timers[uniqueID] = setTimeout(callback, milliseconds);
+ //  		};
+
+	// })();
+
+	// //window resize
+	// $(window).on('resize', function () {
+	// 	console.log("hey");
+	// 	waitForFinalEvent(function(){
+	// 		alert("resize");
+	// 		$('.function').css({'background-color' : 'blue'});
+	// 	}, 500, "some string");
+	// });
+
+
+
+
+
+
+
+  //events view positioning on resize
+    $(window).on('resize', function() {
+    	var win = $(window).width(); //this = window
+    	var cutoff = 1500;
+    	var percent = 0;
+    	console.log(win);
+    	//if window size is smaller than cutoff
+    	if(win < cutoff){
+		    for(var i = ((cutoff - win) / 50); i > 0; --i){
+		    	++percent;
+		    	console.log("i");
+		    };
+		};
+		console.log("percent: " + percent);
+		$('.eventdescription').css({width : '-=' + percent + '%'});
+		$('.function').css({width : '+=' + percent + '%'});
+		$('.function').css({'background-color' : 'blue'});
+		console.log("yep");
+    });
+
+
+
+
+
+   	function display () {
+   		//console.log("yam");
+   		var win = $(window).width();
+   		var cutoff = 1500;
+   		var percent = 0;
+
+   		if(win < cutoff){
+   		
+			percent = ( (win / cutoff) );
+
+			$('.eventdescription').css({width : '*=' + percent + '%'});
+			$('.function').css({width : '/=' + percent + '%'});
+
+   		};
+
+
+   	};
+
+   	setInterval(display, 500);
+
+
+
+})
