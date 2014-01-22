@@ -1,0 +1,1 @@
+All "pdxtech" wireframes are multiple views of a single page app
