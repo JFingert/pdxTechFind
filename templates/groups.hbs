@@ -1,7 +1,16 @@
-<h1>Groups</h1>
-
-{{#each this}}
-  	<img src="{{group_photo.photo_link}}">
-  	<p><a href="{{link}}">{{name}}</a></p>
-	{{{description}}}
-{{/each}}
+<div class="groups">
+	<div class="groupwhite">
+		<table class="grouptable">
+			<tr class="grouprow">
+				{{#each this}}
+				<td class="group"> 
+					<h1 class="grouptitle"><a href="{{link}}">{{name}}</a></h1> 
+					<div class="grouptext">
+						{{{description}}}
+					</div> 
+				</td>
+				{{/each}}
+			</tr>
+		</table>
+	</div>
+</div>

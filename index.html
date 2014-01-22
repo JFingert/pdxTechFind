@@ -5,18 +5,45 @@
 
 	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
 
+	<link rel="stylesheet" type="text/css" href="css/groupstyle.css" />
+	<link rel="stylesheet" type="text/css" href="css/homestyle.css" />
+	<link rel="stylesheet" type="text/css" href="css/masthead.css">
+	<link rel="stylesheet" type="text/css" href="css/eventstyle.css">
+	<link rel="stylesheet" type="text/css" href="css/detailstyle.css">
+
+
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="/js/lib/underscore.js"></script>
 	<script type="text/javascript" src="/js/lib/backbone.js"></script>
+	<script type="text/javascript" src="js/interactive.js"></script>
 	<script type="text/javascript" src="/bundle.js"></script>
 </head>
-<body>
-<h1>pdxTechFind: testing</h1>
 
-<div id="groups"></div>
+<body class="bg">
 
-<div id="events"></div>
+	<div class="portland"></div>
+	<div class="title">PDXtech: beta</div>
+	<div class="navbar nav nav-tabs">
+		<ul class="table">
+			<li class="item" data-toggle="tab"><span class="color"><a class="navlink" href="#home">Home</a></span></li>
+			<li class="item" data-toggle="tab"><span class="color"><a class="navlink" href="#groups">Groups</a></span></li>
+			<li class="item" data-toggle="tab"><span class="color"><a class="navlink" href="#events">Events</a></span></li>
+		</ul>
+	</div>
+	
+
+	<div class="tab-content">
+		<div class="home tab-pane" id="home">
+			<div class="mainwhite">
+				<p>Home view</p>
+			</div>
+		</div>
+
+		<div class="tab-pane" id="groups"></div>
+
+		<div class="tab-pane" id="events"></div>
+	</div>
 
 </body>
 </html>

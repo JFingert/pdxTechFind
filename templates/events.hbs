@@ -1,9 +1,21 @@
-<h1>Events</h1>
-{{#each this}}
-  <p><a href="{{event_url}}">{{name}}</a></p>
-  
-  {{{description}}}
-  
-  <p>{{venue.name}}<br>{{venue.address_1}}<br>
-  {{venue.city}}, {{venue.state}} {{venue.zip}}</p><br>
-{{/each}}
+<div class="events">
+	<div class="eventwhite">
+		
+			{{#each this}}
+			<table class="eventstable">
+				<td class="eventname">
+					<a class="linktitle" href="#">{{name}}</a>
+				</td>
+				<td class="function">function (<p class="info"> {{venue.name}}<br>{{venue.address_1}}<br>
+  				{{venue.city}}, {{venue.state}} {{venue.zip}}</p>) {<br>
+				&#8195	setTimeout(<p class="info"> 11/14, 6:00 PM </p>);<br><!--&#8195 is UTF-8 for 'tab', and <br> is html for line break-->
+				}
+				</td>
+				<td class="eventdescription">
+					{{{description}}}
+				</td>
+			</table>
+			{{/each}}
+		
+	</div>
+</div>
