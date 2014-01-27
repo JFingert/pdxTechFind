@@ -11,12 +11,18 @@
 	<script type="text/javascript" src="/js/lib/backbone.js"></script>
 	<script type="text/javascript" src="/bundle.js"></script>
 </head>
-<body>
-<h1>pdxTechFind: testing</h1>
+	<body class="container">
+		<h1>pdxTechFind: testing</h1>
+		<div class="panel panel-default">
+			<ul class="nav nav-pills">
+		  		<li class="active"><a href="#events" data-toggle="tab">Events</a></li>
+		  		<li><a href="#groups" data-toggle="tab">Groups</a></li>
+			</ul>
 
-<div id="groups"></div>
-
-<div id="events"></div>
-
-</body>
+			<div class="tab-content">
+				<div class="tab-pane fade in active" id="events"></div>
+				<div class="tab-pane fade" id="groups"></div>
+			</div>
+		</div>
+	</body>
 </html>

@@ -1,0 +1,26 @@
+.span2 {
+	width: 30%;
+}
+
+.span10 {
+	width: 50px;
+	text-color: BADA55;
+}
+
+body .box:nth-child(3n) {
+  background-color: steelblue;
+}
+
+body .box:nth-child(3n+1) {
+  background-color: tomato;
+}
+
+body .box:nth-child(3n+2) {
+  background-color: yellow;
+}
+
+.box {
+  width: 200px;
+  height: 200px;
+  border: 1px dashed;
+}
