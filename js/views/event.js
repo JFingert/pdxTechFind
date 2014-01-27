@@ -16,7 +16,6 @@ var EventView = Backbone.View.extend({
         mut.formattedTime = self.formatMeetupTime(mut.time);
       });
 
-      console.log(data);
       this.$el.html(this.template(data));
 	    return this;
 	},
