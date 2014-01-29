@@ -16,6 +16,7 @@ $(function () {
                 groupObj: {},
                 groupIds: [8407282,10030512,4523292,7391716,6693792,6063792,4808882]
         };
+ 
         
         meetUpEventRequest = function (groupIds) {
                 var apiKey = "936f3b161c2450506d7b23683319",
