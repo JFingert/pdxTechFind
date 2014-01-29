@@ -14,7 +14,7 @@ $(function () {
 		views: {},
 		eventObj: {},
 		groupObj: {},
-		groupIds: [6693792,4808882,8407282,10030512]
+		groupIds: [8407282,10030512,4523292,8206192,6693792,6063792,4808882,4300072,9523362,900711,490808]
 	};
 	
 	meetUpEventRequest = function (groupIds) {
@@ -39,6 +39,22 @@ $(function () {
 		});
 	};
 
+	//Calagator API Request
+	calagatorEventRequest = function () {
+		$.ajax({
+    		type: "GET",
+    		url: "http://calagator.org/events.json",
+    		dataType: "jsonp",
+    		success: function(results){
+        		console.log(results);
+    		},
+    		error: function(XMLHttpRequest, textStatus, errorThrown){
+        		alert("Error");
+    		}
+		});
+	}
+
+
 	//Instantiate Backbone Models
 	app.models.events = new EventModel();
 	app.models.groups = new GroupModel();
@@ -50,6 +66,9 @@ $(function () {
 	//Meetup API request using JSONP & Set Model Data
 	meetUpGroupRequest(app.groupIds);
 	meetUpEventRequest(app.groupIds);
+
+	//Calagator API request using JSONP
+	calagatorEventRequest();
 
 	//Console access to app
 	window.app = app;
