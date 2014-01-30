@@ -1,0 +1,255 @@
+$corner: 10px
+$titleSize: 135%
+$size: 350px
+
+.groups
+
+.groupwhite
+	font-family: Helvetica
+	font-size: 110%
+	background-color: white
+	position: relative
+	height: auto
+	width: 88%
+	margin: 65px auto 65px auto
+	//border: 1px solid black
+	text-align: center //CENTERS .groups WITHIN .groupwhite
+	padding: 26px 26px 24px 26px
+	-moz-border-radius: $corner
+	-webkit-border-radius: $corner
+	border-radius: $corner 
+	-khtml-border-radius: $corner
+	behavior: url(lib/PIE.htc)
+	@media (max-width: 490px)
+		padding: 26px 18px 24px 18px
+	@media (max-width: 450px)
+		padding: 26px 12px 24px 12px
+	@media (max-width: 430px)
+		padding: 26px 8px 24px 8px
+		width: 89%
+	@media (max-width: 420px)
+		width: 91%
+		padding: 26px 6px 24px 6px
+	@media (max-width: 415px)
+		width: 92%
+		padding: 26px 4px 24px 4px
+	@media (max-width: 410px)
+		width: 93%
+		padding: 26px 2px 24px 2px
+	@media (max-width: 405px)
+		width: 94%
+		padding: 26px 0px 24px 0px
+	@media (max-width: 400px)
+		width: 96%
+	@media (max-width: 395px)
+		width: 98%
+	@media (max-width: 385px)
+		width: 100%
+
+
+p
+	padding: 0px
+	margin: 0px
+
+a
+	text-decoration: inherit
+	font-weight: inherit
+	color: inherit
+	font-size: inherit
+	padding: 0px
+	margin: 0px
+	word-wrap: break-word
+
+div
+	margin: 0px
+	padding: 0px
+
+
+//TABLE INFO////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+.detailed
+	display: none
+
+
+
+.hide
+	position: absolute !important
+	top: -99999px !important
+	bottom: -999999px !important
+
+
+
+
+
+
+
+	
+//$main is the tie in for the padding and margin for group and toggle
+$groupcolor: rgb(12,227,255)
+//$groupcolor: rgb(167,242,255)
+
+.group
+	position: relative
+	display: inline-block
+	text-align: left
+	width: $size
+	height: $size
+	min-height: $size
+	min-width: $size
+	padding: 10px
+	margin: 15px
+	background-color: $groupcolor
+	vertical-align: top //VERTICAL ALIGN IS USEFUL FOR POSIIONING IN-LINE ELEMENTS
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	overflow: hidden
+	@media (max-width: 475px)
+		margin-left: 6px
+		margin-right: 6px
+	@media (max-width: 385px)
+		margin-left: 3px
+		margin-right: 3px
+	@media (max-width: 380px)
+		width: $size - 15px
+		min-width: $size - 15px
+		height: $size + 15px
+		min-height: $size + 15px
+	@media (max-width: 360px)
+		width: $size - 25px
+		min-width: $size - 25px
+		height: $size + 25px
+		min-height: $size + 25px
+	@media (max-width: 350px)
+		width: $size - 35px
+		min-width: $size - 35px
+		height: $size + 35px
+		min-height: $size + 35px
+	@media (max-width: 340px)
+		margin-left: 1px
+		margin-right: 1px
+		width: $size - 50px
+		min-width: $size - 50px
+		height: $size + 50px
+		min-height: $size + 50px
+	@media (max-width: 320px)
+		margin-right: 0px
+		margin-left: 0px
+		width: $size - 75px
+		min-width: $size - 75px
+		height: $size + 75px
+		min-height: $size + 75px
+	@media (max-width: 300px)
+		width: $size - 100px
+		min-width: $size - 100px
+		height: $size + 100px
+		min-height: $size + 100px
+	@media (max-width: 275px)
+		width: $size - 125px
+		min-width: $size - 125px
+		height: $size + 125px
+		min-height: $size + 125px
+	@media (max-width: 250px)
+		width: $size - 150px
+		min-width: $size - 150px
+		height: $size + 150px
+		min-height: $size + 150px
+
+.grouptitle
+	font-size: $titleSize
+	color: black
+	text-decoration: none
+	font-weight: bold
+	padding: 0px
+	margin: 0px
+	padding-bottom: 10px
+	text-align: left
+
+
+.grouptext
+	position: relative
+	padding: 0px
+	margin: 0px
+	line-height: 1.25
+	word-wrap: break-word
+	height: 85%
+	overflow: hidden
+	z-index: 5555
+
+.extendedtext
+	position: relative
+	padding: 0px
+	margin: 0px
+	line-height: 1.25
+	word-wrap: break-word
+	height: 89%
+	overflow: hidden
+	background-color: $groupcolor
+	display: none
+
+//thumb needs redefinition with actual api
+.thumb
+	float: left
+	height: 75px
+	width: 75px
+	background-color: AntiqueWhite
+	top: 0px
+	vertical-align: top
+	margin: 0px
+	margin-right: 10px
+
+.pic
+	float: left
+	height: 200px
+	width: 200px
+	background-color: AntiqueWhite
+	top: 0px
+	vertical-align: top
+	margin: 0px
+	margin-right: 10px
+	//display: none
+
+
+.fade
+	position: absolute
+	display: inline-block
+	padding: 0px
+	margin: 0px
+	width: 100%
+	height: 40px
+	bottom: 0px
+	right: 0px
+	z-index: 6666
+	//background-image: url(fade_asset_old.png)
+	background-image: url(fade_asset_revised.png)
+
+
+.toggle
+	position: absolute
+	display: inline-block
+	padding: 0px
+	margin: 0px
+	width: 30px
+	height: 30px
+	bottom: 0px
+	right: 0px
+	background-image: url(toggle_asset.png)
+	z-index: 7777
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,154 @@
+$corner: 10px
+$pdcolor: black
+
+.events
+
+.eventwhite
+	font-family: Helvetica
+	font-size: 110%
+	background-color: white
+	position: relative
+	height: auto
+	width: 88%
+	margin: 65px auto 65px auto
+	//border: 1px solid black
+	text-align: center //CENTERS children WITHIN .eventwhite
+	padding: 26px 26px 24px 26px
+	-moz-border-radius: $corner
+	-webkit-border-radius: $corner
+	border-radius: $corner 
+	-khtml-border-radius: $corner
+	behavior: url(lib/PIE.htc)
+	@media (max-width: 490px)
+		padding: 26px 18px 24px 18px
+	@media (max-width: 400px)
+		padding: 26px 10px 24px 10px
+	@media (max-width: 390px)
+		width: 89%
+		padding: 26px 6px 24px 6px
+	@media (max-width: 385px)
+		width: 92%
+		padding: 26px 4px 24px 4px
+	@media (max-width: 375px)
+		width: 93%
+		padding: 26px 2px 24px 2px
+	@media (max-width: 370px)
+		width: 94%
+		padding: 26px 0px 24px 0px
+	@media (max-width: 365px)
+		width: 96%
+	@media (max-width: 355px)
+		width: 100%
+
+div
+	margin: 0px
+	padding: 0px
+
+p
+	margin: 0px
+	padding: 0px
+
+a
+	margin: 0px
+	padding: 0px
+
+$namePad: 5px 0px 4px 8px
+$dpfPad: 4px 8px 6px 8px
+$description: 4px 8px 6px 8px
+$breakpoint: 875px
+
+.event
+	display: block
+	text-align: left
+	width: 100%
+	background-color: none
+	margin: 25px 0px 25px 0px
+	overflow: hidden
+
+.event:first-of-type
+	margin-top: 10px
+
+.event:last-of-type
+	margin-bottom: 10px
+
+.name
+	display: inline-block
+	background-color: rgb(240, 176, 176)
+	width: 100%
+	font-size: 125%
+	padding: $namePad
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+
+
+//Wacky code format
+// .dateplaceformat
+// 	display: inline-block
+// 	background-color: AntiqueWhite
+// 	padding: $dpfPad
+// 	width: 20%
+// 	vertical-align: top
+// 	-webkit-box-sizing: border-box
+// 	-moz-box-sizing: border-box
+// 	box-sizing: border-box
+// 	min-height: 90px
+// 	font-family: Terminal
+// 	line-height: 100%
+// 	font-size: 110%
+
+.description
+	display: inline-block
+	background-color: rgb(167,242,255)
+	width: 80%
+	padding: $description
+	vertical-align: top
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	min-height: 90px
+	margin-bottom: -994px //the margin and padding bot values equalizes height between description and dpformat, essentially making psuedo-columns
+	padding-bottom: 1000px
+	@media (max-width: $breakpoint)
+		display: block
+		width: 100%
+		min-height: 50px
+
+.dpformat
+	display: inline-block
+	background-color: #FFD9A6
+	padding: $dpfPad
+	width: 20%
+	vertical-align: top
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	min-height: 90px
+	font-family: Helvetica
+	line-height: 100%
+	font-size: 110%
+	margin-bottom: -994px
+	padding-bottom: 1000px
+	@media (max-width: $breakpoint)
+		display: block
+		width: 100%
+		min-height: 50px
+
+
+
+.place
+	font-family: Helvetica
+	font-size: 110%
+	line-height: 100%
+	color: $pdcolor
+
+.date
+	font-family: Helvetica
+	font-size: 110%
+	line-height: 100%
+	color: $pdcolor
+
+
+
+
+

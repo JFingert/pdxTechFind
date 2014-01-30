@@ -1,0 +1,130 @@
+.eventwhite {
+  font-family: Helvetica;
+  font-size: 110%;
+  background-color: white;
+  position: relative;
+  height: auto;
+  width: 88%;
+  margin: 65px auto 65px auto;
+  text-align: center;
+  padding: 26px 26px 24px 26px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  -khtml-border-radius: 10px;
+  behavior: url(lib/PIE.htc); }
+  @media (max-width: 490px) {
+    .eventwhite {
+      padding: 26px 18px 24px 18px; } }
+  @media (max-width: 400px) {
+    .eventwhite {
+      padding: 26px 10px 24px 10px; } }
+  @media (max-width: 390px) {
+    .eventwhite {
+      width: 89%;
+      padding: 26px 6px 24px 6px; } }
+  @media (max-width: 385px) {
+    .eventwhite {
+      width: 92%;
+      padding: 26px 4px 24px 4px; } }
+  @media (max-width: 375px) {
+    .eventwhite {
+      width: 93%;
+      padding: 26px 2px 24px 2px; } }
+  @media (max-width: 370px) {
+    .eventwhite {
+      width: 94%;
+      padding: 26px 0px 24px 0px; } }
+  @media (max-width: 365px) {
+    .eventwhite {
+      width: 96%; } }
+  @media (max-width: 355px) {
+    .eventwhite {
+      width: 100%; } }
+
+div {
+  margin: 0px;
+  padding: 0px; }
+
+p {
+  margin: 0px;
+  padding: 0px; }
+
+a {
+  margin: 0px;
+  padding: 0px; }
+
+.event {
+  display: block;
+  text-align: left;
+  width: 100%;
+  background-color: none;
+  margin: 25px 0px 25px 0px;
+  overflow: hidden; }
+
+.event:first-of-type {
+  margin-top: 10px; }
+
+.event:last-of-type {
+  margin-bottom: 10px; }
+
+.name {
+  display: inline-block;
+  background-color: #f0b0b0;
+  width: 100%;
+  font-size: 125%;
+  padding: 5px 0px 4px 8px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.description {
+  display: inline-block;
+  background-color: #a7f2ff;
+  width: 80%;
+  padding: 4px 8px 6px 8px;
+  vertical-align: top;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  min-height: 90px;
+  margin-bottom: -994px;
+  padding-bottom: 1000px; }
+  @media (max-width: 875px) {
+    .description {
+      display: block;
+      width: 100%;
+      min-height: 50px; } }
+
+.dpformat {
+  display: inline-block;
+  background-color: #ffd9a6;
+  padding: 4px 8px 6px 8px;
+  width: 20%;
+  vertical-align: top;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  min-height: 90px;
+  font-family: Helvetica;
+  line-height: 100%;
+  font-size: 110%;
+  margin-bottom: -994px;
+  padding-bottom: 1000px; }
+  @media (max-width: 875px) {
+    .dpformat {
+      display: block;
+      width: 100%;
+      min-height: 50px; } }
+
+.place {
+  font-family: Helvetica;
+  font-size: 110%;
+  line-height: 100%;
+  color: black; }
+
+.date {
+  font-family: Helvetica;
+  font-size: 110%;
+  line-height: 100%;
+  color: black; }

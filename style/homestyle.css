@@ -1,0 +1,50 @@
+.mainwhite {
+  font-family: Helvetica;
+  font-size: 110%;
+  background-color: white;
+  position: relative;
+  height: auto;
+  width: 88%;
+  margin: 65px auto 65px auto;
+  text-align: center;
+  padding: 26px 26px 24px 26px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  -khtml-border-radius: 10px;
+  behavior: url(lib/PIE.htc); }
+  @media (max-width: 490px) {
+    .mainwhite {
+      padding: 26px 18px 24px 18px; } }
+  @media (max-width: 400px) {
+    .mainwhite {
+      padding: 26px 10px 24px 10px; } }
+  @media (max-width: 390px) {
+    .mainwhite {
+      width: 89%;
+      padding: 26px 6px 24px 6px; } }
+  @media (max-width: 385px) {
+    .mainwhite {
+      width: 92%;
+      padding: 26px 4px 24px 4px; } }
+  @media (max-width: 375px) {
+    .mainwhite {
+      width: 93%;
+      padding: 26px 2px 24px 2px; } }
+  @media (max-width: 370px) {
+    .mainwhite {
+      width: 94%;
+      padding: 26px 0px 24px 0px; } }
+  @media (max-width: 365px) {
+    .mainwhite {
+      width: 96%; } }
+  @media (max-width: 355px) {
+    .mainwhite {
+      width: 100%; } }
+
+p {
+  padding: 0px;
+  margin: 0px; }
+
+.words {
+  text-align: left; }

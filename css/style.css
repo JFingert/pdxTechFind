@@ -1,0 +1,60 @@
+.bg {
+  background-color: #f1ccff;
+  background-image: url(background_diamond_small.png);
+  width: 100%;
+}
+
+.portland {
+  position: static;
+  width: 100%;
+  height: 280px;
+  margin: 0px;
+  padding: 0px;
+  background-image: url(portland.png); 
+}
+
+.title {
+  position: absolute !important;
+  text-align: center !important;
+  top: 11%;
+  width: 100% !important;
+  color: black;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 999999;
+  font-family: Helvetica;
+  font-weight: bold;
+  font-size: 400%;
+  text-shadow: 1px 1px 1px white, -1px -1px 1px white, -1px 1px 1px white, 1px -1px 1px white; 
+}  
+
+  
+.nav {
+  background-color: #050117;
+  font-family: Helvetica;
+  font-size: 155%;
+  padding-top: 9px;
+  padding-bottom: 5px;	
+}
+
+
+
+@media (max-width: 300px) {
+    .title {
+      font-size: 350%; 
+  	} 
+}
+
+@media (max-width: 250px) {
+    .title {
+      font-size: 325%; 
+    } 
+}
+
+a:hover {
+	background-color: #1b182b !important;
+}
+
+a:active {
+	background-color: ##141121 !important;
+}
