@@ -14,6 +14,7 @@ $(function () {
                 views: {},
                 eventObj: {},
                 groupObj: {},
+                calagatorObj: {},
                 groupIds: [8407282,10030512,4523292,7391716,6693792,6063792,4808882]
         };
         
@@ -37,6 +38,14 @@ $(function () {
                          console.log(app.groupObj);
                          app.models.groups.set(app.groupObj);
                 });
+        };
+
+        calagatorEventRequest = function () {
+            $.getJSON("http://calagator.org/events.json&callback=?", null, function(calagatorData) {
+                app.calagatorObj = calagatorData;
+                console.log(app.calagatorObj);
+                app.models.calagator.set(app.calagatorObj);
+            });
         };
 
         //Instantiate Backbone Models
