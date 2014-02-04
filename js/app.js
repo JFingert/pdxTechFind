@@ -1,5 +1,4 @@
 //beefy js/app.js:bundle.js --live
-
 $(function () {
 
 	//Load Backbone app modules and npm dependencies
@@ -7,6 +6,9 @@ $(function () {
 	GroupView = require('./views/group.js'),
 	EventModel = require('./models/event.js'),
 	GroupModel = require('./models/group.js');
+	Firebase = require('firebase');
+
+	//var myRootRef = new Firebase('https://pdxtechfind.firebaseio.com');
 
 	//App objects
 	var app = {
@@ -14,21 +16,21 @@ $(function () {
 		views: {},
 		eventObj: {},
 		groupObj: {},
-		groupIds: [8407282,10030512,4523292,8206192,6693792,6063792,4808882,4300072,9523362,900711,490808]
+		groupIds: [4808882,4300072,9523362,900711,490808,8407282,10030512,4523292,8206192,6693792,6063792]
 	};
 	
-	meetUpEventRequest = function (groupIds) {
-		var apiKey = "936f3b161c2450506d7b23683319",
-	 		url = "https://api.meetup.com/2/events?&sign=true&group_id=" + groupIds + "&key=" + apiKey + "&page=20";
+	function meetUpEventRequest (groupIds) {
+		var apiKey = '936f3b161c2450506d7b23683319',
+			url='https://api.meetup.com/2/events?&sign=true&group_id=' + groupIds + '&key=' + apiKey + '&page=20';
 
 		$.getJSON(url + "&callback=?", null, function(eventData) {
 		 	app.eventObj = eventData;
 		 	console.log(app.eventObj);
 		 	app.models.events.set(app.eventObj);
 		});
-	};
+	}
 
-	meetUpGroupRequest = function (groupIds) {
+	function meetUpGroupRequest (groupIds) {
 		var apiKey = "936f3b161c2450506d7b23683319",
 	 		url = "https://api.meetup.com/2/groups?&sign=true&group_id=" + groupIds + "&key=" + apiKey + "&page=20";
 
@@ -37,7 +39,7 @@ $(function () {
 		 	console.log(app.groupObj);
 		 	app.models.groups.set(app.groupObj);
 		});
-	};
+	}
 
 	//Calagator API Request
 	calagatorEventRequest = function () {
