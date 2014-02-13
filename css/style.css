@@ -1,6 +1,6 @@
 .bg {
   background-color: #f1ccff;
-  background-image: url(background_diamond_small.png);
+  background-image: url(background_repeat_small-01.png);
   width: 100%;
 }
 
@@ -37,17 +37,21 @@
   padding-bottom: 5px;	
 }
 
-
+@media (max-width: 350px) {
+  .title {
+    font-size: 350%
+  }
+}
 
 @media (max-width: 300px) {
     .title {
-      font-size: 350%; 
+      font-size: 300%; 
   	} 
 }
 
 @media (max-width: 250px) {
     .title {
-      font-size: 325%; 
+      font-size: 250%; 
     } 
 }
 
